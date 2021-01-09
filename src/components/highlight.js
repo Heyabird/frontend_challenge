@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import { graphql } from "gatsby"
 import "../css/highlight.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 export const Highlight = ({data}) => {
     // const imageData = data.allContentfulLayoutBackgroundImage.edges[0].node.image.fluid
@@ -11,7 +13,7 @@ export const Highlight = ({data}) => {
         <div class="highlight">
           <p class="highlight-title">Augmented Reality</p>
           <p class="highlight-description">An interactive experience like no other.</p>
-          <a class="highlight-learn-more">Learn more <i class="fas fa-chevron-right"></i></a>
+          <a class="highlight-learn-more">Learn more <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
         </div>
     )
 }
