@@ -10,7 +10,8 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "./layout.css"
+import "../css/layout.css"
+import "../css/background-image.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,20 +26,17 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={`Brackets`} />
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          // maxWidth: 1060,
         }}
       >
         <main>{children}</main>
-        <footer style={{
+        {/* <footer style={{
           marginTop: `2rem`
         }}>
-
-        </footer>
+        </footer> */}
       </div>
     </>
   )
