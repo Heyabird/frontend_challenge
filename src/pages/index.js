@@ -13,20 +13,20 @@ const IndexPage = ({ data }) => {
 
   const backgroundImageData = data.allContentfulLayoutBackgroundImage.edges[0].node.image.fluid
   const logoImageData = data.allContentfulNavItem.edges[4].node.image.svg.dataURI
+  const navItemData = data.allContentfulNavItem.edges
   const highlightFeatureData = data.allContentfulLayoutHighlightedFeature.edges[0].node.feature
   const layoutCopyData = data.allContentfulLayoutCopy.edges
   console.log("highlightFeatureData", highlightFeatureData)
 
   return (
     <div className="index-body">
-      <Layout>
+      {/* <Layout> */}
         <BackgroundImage
           className="background-image"
-          // tag={section}
           fluid={backgroundImageData}
         >
-        <img id="logo" src={logoImageData}/>
 
+        <Header logoImageData={logoImageData} navItemData={navItemData}/>
         <div className="index-middle">
           <div className="hero-copy">
             <p className="subheadline">{layoutCopyData[0].node.subHeadline}</p>
@@ -34,8 +34,8 @@ const IndexPage = ({ data }) => {
             <p>{layoutCopyData[0].node.shortDescription}</p>
           </div>
 
-          <a href="" className="button primary">{layoutCopyData[2].node.ctaTitle} <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
-          <a href="" className="button secondary">{layoutCopyData[1].node.ctaTitle} <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
+          <a href="#" className="button primary">{layoutCopyData[2].node.ctaTitle} <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
+          <a href="#" className="button secondary">{layoutCopyData[1].node.ctaTitle} <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
 
           <div className="highlight-section">
             <Highlight title={highlightFeatureData[0].title} imgSrc={highlightFeatureData[0].image.fluid.src} shortDescription={highlightFeatureData[0].shortDescription}/>
@@ -44,7 +44,7 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
         </BackgroundImage>
-      </Layout>
+      {/* </Layout> */}
     </div>
   )
 }
@@ -69,6 +69,8 @@ export const query = graphql`
     allContentfulNavItem {
       edges {
         node {
+          link
+          title
           image {
             svg {
               dataURI
