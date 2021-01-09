@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => {
 
   const imageData = data.allContentfulLayoutBackgroundImage.edges[0].node.image.fluid
 
-  const logoImageData = data.allContentfulNavItem.edges[3].node.image
+  const logoImageData = data.allContentfulNavItem.edges[4].node.image.svg.dataURI
 
   return (
     <Layout>
@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => {
         fluid={imageData}
       >
         Test
-        {logoImageData}
+        <img src={logoImageData}/>
         <Highlight/>
       </BackgroundImage>
     </Layout>
@@ -49,14 +49,15 @@ export const query = graphql`
       edges {
         node {
           image {
-            fixed {
-              src
+            svg {
+              dataURI
             }
           }
         }
       }
     }
   }
+  
   
   `
   
