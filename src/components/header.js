@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import "../css/global.css"
 
 
 const Header = props => {

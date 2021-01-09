@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import "../css/global.css"
 import "../css/layout.css"
 import "../css/background-image.css"
 

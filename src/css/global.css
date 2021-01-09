@@ -3,6 +3,10 @@ body {
     font-size: 14.4px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .button {
     height: 40px;
     width: 141px;

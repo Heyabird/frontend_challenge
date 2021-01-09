@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-// import Img from 'gatsby-image'
 import BackgroundImage from 'gatsby-background-image'
 import Layout from "../components/layout"
 import { Highlight } from "../components/highlight"
@@ -9,9 +8,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import "../css/index.css"
 import "../css/global.css"
-
-// import { node } from "prop-types"
-
 
 const IndexPage = ({ data }) => {
 
@@ -33,13 +29,13 @@ const IndexPage = ({ data }) => {
 
         <div className="index-middle">
           <div className="hero-copy">
-            <p>{layoutCopyData[2].node.subHeadline}</p>
-            <h1>{layoutCopyData[2].node.headline}</h1>
-            <p>{layoutCopyData[2].node.shortDescription}</p>
+            <p className="subheadline">{layoutCopyData[0].node.subHeadline}</p>
+            <h1>{layoutCopyData[0].node.headline}</h1>
+            <p>{layoutCopyData[0].node.shortDescription}</p>
           </div>
 
-          <a className="button primary">{layoutCopyData[1].node.ctaTitle} <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
-          <a className="button secondary">{layoutCopyData[0].node.ctaTitle} <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
+          <a href="" className="button primary">{layoutCopyData[2].node.ctaTitle} <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
+          <a href="" className="button secondary">{layoutCopyData[1].node.ctaTitle} <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
 
           <div className="highlight-section">
             <Highlight title={highlightFeatureData[0].title} imgSrc={highlightFeatureData[0].image.fluid.src} shortDescription={highlightFeatureData[0].shortDescription}/>
