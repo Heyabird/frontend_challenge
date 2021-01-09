@@ -7,18 +7,22 @@ import { Highlight } from "../components/highlight"
 // import { node } from "prop-types"
 
 
-const IndexPage = ( {data} ) => {
+const IndexPage = ({ data }) => {
+
   const imageData = data.allContentfulLayoutBackgroundImage.edges[0].node.image.fluid
+
+  const logoImageData = data.allContentfulNavItem.edges[3].node.image
+
   return (
     <Layout>
       <BackgroundImage
         className="background"
-        tag={section}
+        // tag={section}
         fluid={imageData}
       >
         Test
+        {logoImageData}
         <Highlight/>
-
       </BackgroundImage>
     </Layout>
   )
@@ -26,19 +30,33 @@ const IndexPage = ( {data} ) => {
 
 export default IndexPage
 
-export const query = graphql`query MyQuery {
-  allContentfulLayoutBackgroundImage {
-    edges {
-      node {
-        title
-        image {
-          fluid {
-            src
+export const query = graphql`
+  query backgroundQuery {
+    allContentfulLayoutBackgroundImage {
+      edges {
+        node {
+          title
+          image {
+            fluid {
+              src
+            }
+          }
+        }
+      }
+    }
+
+    allContentfulNavItem {
+      edges {
+        node {
+          image {
+            fixed {
+              src
+            }
           }
         }
       }
     }
   }
-}
-
-`
+  
+  `
+  

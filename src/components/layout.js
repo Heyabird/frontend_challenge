@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
       >
         <Header siteTitle={`Brackets`} />
         <main>{children}</main>
-        {/* <Highlight/> */}
+        
       </div>
     </>
   )
