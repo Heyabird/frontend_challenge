@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import { Highlight } from "../components/highlight"
 import Header from "../components/header"
 import "../css/index.css"
+import "../css/global.css"
 
 // import { node } from "prop-types"
 
