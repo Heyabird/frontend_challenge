@@ -13,9 +13,10 @@ import "../css/global.css"
 
 const IndexPage = ({ data }) => {
 
-  const imageData = data.allContentfulLayoutBackgroundImage.edges[0].node.image.fluid
+  const backgroundImageData = data.allContentfulLayoutBackgroundImage.edges[0].node.image.fluid
   const logoImageData = data.allContentfulNavItem.edges[4].node.image.svg.dataURI
-  const highlightFeatureData = data.allContentfulLayoutHighlightedFeature.edges[0].node.feature.title
+  const highlightFeatureData = data.allContentfulLayoutHighlightedFeature.edges[0].node.feature
+  // console.log("logoImageData", logoImageData)
   console.log("highlightFeatureData", highlightFeatureData)
 
   return (
@@ -24,7 +25,7 @@ const IndexPage = ({ data }) => {
         <BackgroundImage
           className="background-image"
           // tag={section}
-          fluid={imageData}
+          fluid={backgroundImageData}
         >
         <img id="logo" src={logoImageData}/>
 
@@ -39,14 +40,13 @@ const IndexPage = ({ data }) => {
           <a className="button secondary">Request a demo</a>
 
           <div className="highlight-section">
-            <Highlight title={highlightFeatureData}/>
-            <Highlight/>
-            <Highlight/>
+            <Highlight title={highlightFeatureData[0].title} imgSrc={highlightFeatureData[0].image.fluid.src} shortDescription={highlightFeatureData[0].shortDescription}/>
+            <Highlight title={highlightFeatureData[1].title} imgSrc={highlightFeatureData[1].image.fluid.src} shortDescription={highlightFeatureData[1].shortDescription}/>
+            <Highlight title={highlightFeatureData[2].title} imgSrc={highlightFeatureData[2].image.fluid.src} shortDescription={highlightFeatureData[2].shortDescription}/>
           </div>
         </div>
         </BackgroundImage>
       </Layout>
-      {/* <Header logoURI={logoImageData} test="test"/> */}
     </div>
   )
 }
