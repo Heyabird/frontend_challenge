@@ -7,37 +7,24 @@ import { Highlight } from "../components/highlight"
 // import { node } from "prop-types"
 
 
-const IndexPage = ( {data} ) => (
-// const IndexPage = ( props ) => (
+const IndexPage = ( {data} ) => {
+  const imageData = data.allContentfulLayoutBackgroundImage.edges[0].node.image.fluid
+  return (
+    <Layout>
+      <BackgroundImage
+        className="background"
+        tag={section}
+        fluid={imageData}
+      >
+        Test
+        <Highlight/>
 
-  <Layout>
-    {/* <img src={data.allContentfulLayoutBackgroundImage.edges[0].node.image.fluid.src}/> */}
-    {/* <BackgroundImage
-      fluid={props.data.indexImage.childImageSharp.fluid}
-    > */}
-    <BackgroundImage
-      className="background"
-      fluid={data.allContentfulLayoutBackgroundImage.edges[0].node.image.fluid}
-    >
-      Test
-      <Highlight/>
-    </BackgroundImage>
-  </Layout>
-)
+      </BackgroundImage>
+    </Layout>
+  )
+}
 
 export default IndexPage
-
-// export const query = graphql`
-//   query {
-//     indexImage: file(relativePath: { eq: "blue.png" }) {
-//       childImageSharp {
-//         fluid(maxWidth: 1800) {
-//           ...GatsbyImageSharpFluid
-//         }
-//       }
-//     }
-//   }
-// `
 
 export const query = graphql`query MyQuery {
   allContentfulLayoutBackgroundImage {
