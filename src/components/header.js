@@ -24,7 +24,6 @@ const Header = props => {
           padding: `1.45rem 1.0875rem`,
         }}
       >
-        <p style={{ margin: 0 }}>
           <Link
             to="/"
             style={{
@@ -44,9 +43,8 @@ const Header = props => {
             <Link>What's included?</Link>
             <Link>Pricing</Link>
             <Link>Sign in</Link>
-            <a class="button primary">Get Started <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
+            <a className="button primary">Get Started <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
           </div>
-        </p>
       </div>
     </header>
   </>

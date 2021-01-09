@@ -6,31 +6,15 @@ import "../css/highlight.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
-export const Highlight = ({data}) => {
-    // const imageData = data.allContentfulLayoutBackgroundImage.edges[0].node.image.fluid
+export const Highlight = (props) => {
+  console.log("props title", props.title)
+    // const featureData = data.allContentfulFeature.nodes[0].title
 
     return (
-        <div class="highlight">
-          <p class="highlight-title">Augmented Reality</p>
-          <p class="highlight-description">An interactive experience like no other.</p>
-          <a class="highlight-learn-more">Learn more <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
+        <div className="highlight">
+          <p className="highlight-title">{props.title}</p>
+          <p className="highlight-description">An interactive experience like no other.</p>
+          <a className="highlight-learn-more">Learn more <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
         </div>
     )
 }
-
-export const query = graphql`
-  query highlightQuery {
-    allContentfulLayoutBackgroundImage {
-      edges {
-        node {
-          title
-          image {
-            fluid {
-              src
-            }
-          }
-        }
-      }
-    }
-}
-  `

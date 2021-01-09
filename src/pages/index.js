@@ -14,11 +14,12 @@ import "../css/global.css"
 const IndexPage = ({ data }) => {
 
   const imageData = data.allContentfulLayoutBackgroundImage.edges[0].node.image.fluid
-
   const logoImageData = data.allContentfulNavItem.edges[4].node.image.svg.dataURI
+  const highlightFeatureData = data.allContentfulLayoutHighlightedFeature.edges[0].node.feature.title
+  console.log("highlightFeatureData", highlightFeatureData)
 
   return (
-    <div class="index-body">
+    <div className="index-body">
       <Layout>
         <BackgroundImage
           className="background-image"
@@ -27,18 +28,18 @@ const IndexPage = ({ data }) => {
         >
         <img id="logo" src={logoImageData}/>
 
-        <div class="index-middle">
-          <div class="hero-copy">
+        <div className="index-middle">
+          <div className="hero-copy">
             <p>America's #1 Rated Adventure Platform</p>
             <h1>Take control of your weekends</h1>
             <p>Find adventure anywhere.</p>
           </div>
 
-          <a class="button primary">Get started</a>
-          <a class="button secondary">Request a demo</a>
+          <a className="button primary">Get started</a>
+          <a className="button secondary">Request a demo</a>
 
-          <div class="highlight-section">
-            <Highlight/>
+          <div className="highlight-section">
+            <Highlight title={highlightFeatureData}/>
             <Highlight/>
             <Highlight/>
           </div>
@@ -53,7 +54,7 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 export const query = graphql`
-  query backgroundQuery {
+  query myQuery {
     allContentfulLayoutBackgroundImage {
       edges {
         node {
@@ -73,6 +74,34 @@ export const query = graphql`
           image {
             svg {
               dataURI
+            }
+          }
+        }
+      }
+    }
+
+    allContentfulFeature {
+      nodes {
+        image {
+          fluid {
+            src
+          }
+        }
+        title
+        shortDescription
+      }
+    }
+
+    allContentfulLayoutHighlightedFeature {
+      edges {
+        node {
+          feature {
+            title
+            shortDescription
+            image {
+              fluid {
+                src
+              }
             }
           }
         }
