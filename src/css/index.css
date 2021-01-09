@@ -2,3 +2,8 @@
     display: flex;
     justify-content: space-around;
 }
+
+.hero-copy {
+    color: white;
+    max-width: 330px;
+}

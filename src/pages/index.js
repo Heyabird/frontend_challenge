@@ -26,6 +26,14 @@ const IndexPage = ({ data }) => {
         >
         <img id="logo" src={logoImageData}/>
 
+        <div class="hero-copy">
+          <p>America's #1 Rated Adventure Platform</p>
+          <h1>Take control of your weekends</h1>
+          <p>Find adventure anywhere.</p>
+          <button>Get started</button>
+          <button>Request a demo</button>
+        </div>
+
         <div class="highlight-section">
           <Highlight/>
           <Highlight/>
