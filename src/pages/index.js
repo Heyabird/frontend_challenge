@@ -27,18 +27,21 @@ const IndexPage = ({ data }) => {
         >
         <img id="logo" src={logoImageData}/>
 
-        <div class="hero-copy">
-          <p>America's #1 Rated Adventure Platform</p>
-          <h1>Take control of your weekends</h1>
-          <p>Find adventure anywhere.</p>
-          <button>Get started</button>
-          <button>Request a demo</button>
-        </div>
+        <div class="index-body">
+          <div class="hero-copy">
+            <p>America's #1 Rated Adventure Platform</p>
+            <h1>Take control of your weekends</h1>
+            <p>Find adventure anywhere.</p>
+          </div>
 
-        <div class="highlight-section">
-          <Highlight/>
-          <Highlight/>
-          <Highlight/>
+          <a class="button primary">Get started</a>
+          <a class="button secondary">Request a demo</a>
+
+          <div class="highlight-section">
+            <Highlight/>
+            <Highlight/>
+            <Highlight/>
+          </div>
         </div>
         </BackgroundImage>
       </Layout>
@@ -75,7 +78,7 @@ export const query = graphql`
         }
       }
     }
-    
+
   }
   
   `

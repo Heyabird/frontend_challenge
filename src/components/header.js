@@ -41,7 +41,7 @@ const Header = props => {
             <Link>What's included?</Link>
             <Link>Pricing</Link>
             <Link>Sign in</Link>
-            <Link>Get Started</Link>
+            <a class="button primary">Get Started</a>
           </div>
         </p>
       </div>

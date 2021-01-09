@@ -11,7 +11,7 @@ export const Highlight = ({data}) => {
         <div class="highlight">
           <p class="highlight-title">Augmented Reality</p>
           <p class="highlight-description">An interactive experience like no other.</p>
-          <a class="highlight-learn-more">Learn more ></a>
+          <a class="highlight-learn-more">Learn more <i class="fas fa-chevron-right"></i></a>
         </div>
     )
 }

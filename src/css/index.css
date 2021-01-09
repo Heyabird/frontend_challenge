@@ -1,12 +1,17 @@
-body {
+.index-body {
     max-width: 1170px; 
+    margin: auto;
 }
 .highlight-section {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .hero-copy {
     color: white;
-    max-width: 330px;
+    max-width: 470px;
+}
+
+.index-body .button {
+
 }

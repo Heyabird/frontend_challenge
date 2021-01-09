@@ -1,3 +1,20 @@
 body {
     font-family: Inter;
+    font-size: 14.4px;
+}
+
+.button {
+    height: 40px;
+    width: 141px;
+    border-radius: 3px;    
+    padding: 11px 24px;
+    font-weight: 700;
+}
+
+.primary {
+    background-color: #2885F6;
+}
+
+.secondary {
+    background-color: #767D84;
 }
