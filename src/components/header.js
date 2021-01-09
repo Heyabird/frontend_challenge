@@ -2,6 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+
 
 const Header = props => {
 
@@ -41,7 +44,7 @@ const Header = props => {
             <Link>What's included?</Link>
             <Link>Pricing</Link>
             <Link>Sign in</Link>
-            <a class="button primary">Get Started</a>
+            <a class="button primary">Get Started <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
           </div>
         </p>
       </div>

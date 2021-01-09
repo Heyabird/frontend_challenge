@@ -18,16 +18,16 @@ const IndexPage = ({ data }) => {
   const logoImageData = data.allContentfulNavItem.edges[4].node.image.svg.dataURI
 
   return (
-    <>
+    <div class="index-body">
       <Layout>
         <BackgroundImage
-          className="background"
+          className="background-image"
           // tag={section}
           fluid={imageData}
         >
         <img id="logo" src={logoImageData}/>
 
-        <div class="index-body">
+        <div class="index-middle">
           <div class="hero-copy">
             <p>America's #1 Rated Adventure Platform</p>
             <h1>Take control of your weekends</h1>
@@ -45,8 +45,8 @@ const IndexPage = ({ data }) => {
         </div>
         </BackgroundImage>
       </Layout>
-      <Header logoURI={logoImageData} test="test"/>
-    </>
+      {/* <Header logoURI={logoImageData} test="test"/> */}
+    </div>
   )
 }
 

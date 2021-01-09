@@ -1,4 +1,8 @@
 .index-body {
+    background-color: black;
+    height: 100vh;
+}
+.index-middle {
     max-width: 1170px; 
     margin: auto;
 }
@@ -10,8 +14,4 @@
 .hero-copy {
     color: white;
     max-width: 470px;
-}
-
-.index-body .button {
-
 }
