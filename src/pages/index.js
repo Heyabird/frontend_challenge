@@ -4,6 +4,8 @@ import { graphql } from "gatsby"
 import BackgroundImage from 'gatsby-background-image'
 import Layout from "../components/layout"
 import { Highlight } from "../components/highlight"
+import Header from "../components/header"
+
 // import { node } from "prop-types"
 
 
@@ -14,17 +16,21 @@ const IndexPage = ({ data }) => {
   const logoImageData = data.allContentfulNavItem.edges[4].node.image.svg.dataURI
 
   return (
-    <Layout>
-      <BackgroundImage
-        className="background"
-        // tag={section}
-        fluid={imageData}
-      >
-        Test
-        <img src={logoImageData}/>
-        <Highlight/>
-      </BackgroundImage>
-    </Layout>
+    <>
+      <Layout>
+        <BackgroundImage
+          className="background"
+          // tag={section}
+          fluid={imageData}
+        >
+        <img id="logo" src={logoImageData}/>
+
+          Test
+          <Highlight/>
+        </BackgroundImage>
+      </Layout>
+      <Header logoURI={logoImageData} test="test"/>
+    </>
   )
 }
 

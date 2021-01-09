@@ -3,11 +3,15 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 
-const Header = ({ data }) => {
+const Header = props => {
 
   // const logoImageData = data.allContentfulNavItem.edges
-
+  console.log("props test", props.logoURI);
+  console.log("props test", props.test);
+  const logoURI = props.logoURI
+  console.log("props", logoURI)
   return (
+  <>
     <header>
       <div
         style={{
@@ -17,18 +21,21 @@ const Header = ({ data }) => {
           padding: `1.45rem 1.0875rem`,
         }}
       >
-        <h1 style={{ margin: 0 }}>
+        <p style={{ margin: 0 }}>
           <Link
             to="/"
             style={{
               textDecoration: `none`,          
             }}
           >
+
             {/* <img src={logoImageData}/> */}
           </Link>
+
           <div
             style={{
-              display: `inline`,          
+              display: `flex`,
+              justifyContent: `flex-end`,          
             }}
           >
             <Link>What's included?</Link>
@@ -36,9 +43,10 @@ const Header = ({ data }) => {
             <Link>Sign in</Link>
             <Link>Get Started</Link>
           </div>
-        </h1>
+        </p>
       </div>
     </header>
+  </>
   )
 }
 
