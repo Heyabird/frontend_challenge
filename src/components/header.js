@@ -4,14 +4,13 @@ import React from "react"
 
 const Header = ({ siteTitle }) => (
   <header
-    style={{
-      marginBottom: `1.45rem`,
-    }}
   >
     <div
       style={{
         margin: `0 auto`,
-        maxWidth: 960,
+        // maxWidth: 960,
+        position: 'absolute',
+        zIndex: 2,
         padding: `1.45rem 1.0875rem`,
       }}
     >
@@ -19,11 +18,21 @@ const Header = ({ siteTitle }) => (
         <Link
           to="/"
           style={{
-            textDecoration: `none`,
+            textDecoration: `none`,          
           }}
         >
           {siteTitle}
         </Link>
+        <div
+          style={{
+            display: `inline`,          
+          }}
+        >
+          <Link>What's included?</Link>
+          <Link>Pricing</Link>
+          <Link>Sign in</Link>
+          <Link>Get Started</Link>
+        </div>
       </h1>
     </div>
   </header>

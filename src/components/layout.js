@@ -32,11 +32,9 @@ const Layout = ({ children }) => {
           // maxWidth: 1060,
         }}
       >
+        <Header siteTitle={`Brackets`} />
         <main>{children}</main>
-        {/* <footer style={{
-          marginTop: `2rem`
-        }}>
-        </footer> */}
+        {/* <Highlight/> */}
       </div>
     </>
   )
