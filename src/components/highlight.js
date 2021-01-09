@@ -9,7 +9,9 @@ export const Highlight = ({data}) => {
 
     return (
         <div class="highlight">
-            <h2>Highlight Feature</h2>
+          <p class="highlight-title">Augmented Reality</p>
+          <p class="highlight-description">An interactive experience like no other.</p>
+          <a class="highlight-learn-more">Learn more ></a>
         </div>
     )
 }

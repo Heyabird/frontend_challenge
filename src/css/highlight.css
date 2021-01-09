@@ -2,6 +2,21 @@
     background-color: white;
     width: 370px;
     height: 240px;
-    border-radius: 5px;
+    border-radius: 4px;
     padding: 32px;
+}
+
+.highlight-title {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.highlight-description {
+    font-size: 14.4px;
+}
+
+.highlight-learn-more {
+    font-size: 14.4px;
+    color: #F65928;
+    font-weight: 700;
 }
