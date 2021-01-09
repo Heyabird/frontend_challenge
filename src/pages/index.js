@@ -5,6 +5,7 @@ import BackgroundImage from 'gatsby-background-image'
 import Layout from "../components/layout"
 import { Highlight } from "../components/highlight"
 import Header from "../components/header"
+import "../css/index.css"
 
 // import { node } from "prop-types"
 
@@ -25,8 +26,11 @@ const IndexPage = ({ data }) => {
         >
         <img id="logo" src={logoImageData}/>
 
-          Test
+        <div class="highlight-section">
           <Highlight/>
+          <Highlight/>
+          <Highlight/>
+        </div>
         </BackgroundImage>
       </Layout>
       <Header logoURI={logoImageData} test="test"/>
