@@ -12,11 +12,13 @@ export const Highlight = (props) => {
     // const featureData = data.allContentfulFeature.nodes[0].title
 
     return (
+      <>
         <div className="highlight">
           <img class="highlight-image" src={props.imgSrc}/>
           <p className="highlight-title">{props.title}</p>
           <p className="highlight-description">{props.shortDescription}</p>
           <a href="#" className="highlight-learn-more">Learn more <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
         </div>
+      </>
     )
 }

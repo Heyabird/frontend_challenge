@@ -45,6 +45,8 @@ const IndexPage = ({ data }) => {
             <Highlight title={highlightFeatureData[2].title} imgSrc={highlightFeatureData[2].image.fluid.src} shortDescription={highlightFeatureData[2].shortDescription}/>
           </div>
         </div>
+        <div className="dummy-square">hello</div>
+
         </BackgroundImage>
       {/* </Layout> */}
     </div>
