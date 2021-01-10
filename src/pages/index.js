@@ -13,11 +13,11 @@ import { graphql } from "gatsby"
 const IndexPage = ({ data }) => {
 
   // store esssential contentful data
-  const backgroundImageData = data.allContentfulLayoutBackgroundImage.edges[0].node.image.fluid
-  const logoImageData = data.allContentfulLogo.edges[0].node.image.svg.dataURI
+  const backgroundImageData = data.contentfulLayoutBackgroundImage.image.fluid
+  const logoImageData = data.contentfulLogo.image.svg.dataURI
   const navItemData = data.allContentfulNavItem.edges
-  const highlightFeatureData = data.allContentfulLayoutHighlightedFeature.edges[0].node.feature
-  const layoutCopyData = data.allContentfulLayoutCopy.edges[0].node
+  const highlightFeatureData = data.contentfulLayoutHighlightedFeature.feature
+  const layoutCopyData = data.contentfulLayoutCopy
 
   return (
     <Layout>
@@ -69,33 +69,25 @@ export default IndexPage
 
 export const query = graphql`
   query myQuery {
-    allContentfulLayoutBackgroundImage {
-      edges {
-        node {
-          title
-          image {
-            fluid {
-              src
-            }
-          }
+    contentfulLayoutBackgroundImage {
+      image {
+        fluid {
+          src
         }
+        title
       }
     }
 
-    allContentfulLogo {
-      edges {
-        node {
-          image {
-            svg {
-              dataURI
-            }
-            title
-          }
+    contentfulLogo {
+      image {
+        svg {
+          dataURI
         }
+        title
       }
     }
 
-    allContentfulNavItem {
+    allContentfulNavItem (sort: {fields: [order], order: ASC}) {
       edges {
         node {
           title
@@ -104,36 +96,26 @@ export const query = graphql`
       }
     }
     
-
-    allContentfulLayoutCopy {
-      edges {
-        node {
-          title
-          subHeadline
-          headline
-          shortDescription
-          ctaTitle
-          ctaTitle2
-        }
-      }
+    contentfulLayoutCopy {
+      title
+      headline
+      subHeadline
+      shortDescription
+      ctaTitle
+      ctaTitle2
     }
 
-    allContentfulLayoutHighlightedFeature {
-      edges {
-        node {
-          feature {
-            title
-            shortDescription
-            image {
-              fluid {
-                src
-              }
-            }
+    contentfulLayoutHighlightedFeature {
+      feature {
+        title
+        shortDescription
+        image {
+          fluid {
+            src
           }
         }
       }
     }
-
   }
   
   `
