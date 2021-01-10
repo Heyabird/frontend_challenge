@@ -13,7 +13,11 @@ export const Highlight = (props) => {
         <img className="highlight-image" src={props.imgSrc}/>
         <p className="highlight-title">{props.title}</p>
         <p className="highlight-description">{props.shortDescription}</p>
-        <Link to="#" className="highlight-learn-more">Learn more&nbsp; <FontAwesomeIcon icon={faChevronRight} size="xs"/></Link>
+        <Link 
+          to="#" 
+          className="highlight-learn-more">
+            Learn more&nbsp; <FontAwesomeIcon icon={faChevronRight} size="xs"/>
+        </Link>
       </div>
     </>
   )

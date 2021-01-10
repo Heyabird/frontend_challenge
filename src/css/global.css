@@ -25,6 +25,10 @@ a {
     font-weight: 700;
 }
 
+.button:hover {
+    opacity: 0.9;
+}
+
 .primary {
     background-color: #2885F6;
 }

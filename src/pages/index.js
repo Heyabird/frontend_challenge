@@ -5,16 +5,14 @@ import { Highlight } from "../components/highlight"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
-// import { Helmet } from "react-helmet";
 import BackgroundImage from 'gatsby-background-image'
 import "../css/index.css"
 import "../css/global.css"
 import { graphql } from "gatsby"
 
-
 const IndexPage = ({ data }) => {
 
-  // define essential variables to store contentful data
+  // store esssential contentful data
   const backgroundImageData = data.allContentfulLayoutBackgroundImage.edges[0].node.image.fluid
   const logoImageData = data.allContentfulLogo.edges[0].node.image.svg.dataURI
   const navItemData = data.allContentfulNavItem.edges
@@ -22,36 +20,47 @@ const IndexPage = ({ data }) => {
   const layoutCopyData = data.allContentfulLayoutCopy.edges[0].node
 
   return (
-    <div className="index-body">
     <Layout>
-      <BackgroundImage className="background-image" fluid={backgroundImageData}>
-        <div className="background-overlay"></div>
+      <div className="index-body">
+        <BackgroundImage className="background-image" fluid={backgroundImageData}>
+          <div className="background-overlay"></div>
 
-        <Header logoImageData={logoImageData} navItemData={navItemData}/>
+          <Header logoImageData={logoImageData} navItemData={navItemData}/>
 
-        <div className="index-middle">
-          <div className="hero-copy">
-            <p className="subheadline">{layoutCopyData.subHeadline}</p>
-            <h1 className="headline">{layoutCopyData.headline}</h1>
-            <p className="short-description">{layoutCopyData.shortDescription}</p>
-            <Link to="#" className="button primary">{layoutCopyData.ctaTitle}&nbsp; <FontAwesomeIcon icon={faChevronRight} size="xs"/></Link>
-            <Link to="#" className="button secondary">{layoutCopyData.ctaTitle2}&nbsp; <FontAwesomeIcon icon={faChevronRight} size="xs"/></Link>
+          <div className="index-middle">
+            <div className="hero-copy">
+              <p className="subheadline">{layoutCopyData.subHeadline}</p>
+              <h1 className="headline">{layoutCopyData.headline}</h1>
+              <p className="short-description">{layoutCopyData.shortDescription}</p>
+              <Link 
+                to="#" 
+                className="button primary">
+                  {layoutCopyData.ctaTitle}&nbsp; <FontAwesomeIcon icon={faChevronRight} size="xs"/>
+              </Link>
+              <Link 
+                to="#" className="button secondary">
+                  {layoutCopyData.ctaTitle2}&nbsp; <FontAwesomeIcon icon={faChevronRight} size="xs"/>
+              </Link>
+            </div>
+
+            <div className="highlight-section">
+              {highlightFeatureData.map(data => (
+                // because the mobile phone image needs styling different from the helicopoter and VR headset images, I put in a bool prop value to check if its the mobile image
+                <Highlight 
+                  title={data.title} 
+                  imgSrc={data.image.fluid.src} 
+                  shortDescription={data.shortDescription} 
+                  mobile={data.title === "Mobile" ? true : null}/>
+              ))}
+            </div>
           </div>
 
-          <div className="highlight-section">
-            {highlightFeatureData.map(data => (
-              // because the mobile phone image has different proportion from that of the helicopoter and VR headset images, I put in a bool prop value to check if its the mobile image
-              <Highlight title={data.title} imgSrc={data.image.fluid.src} shortDescription={data.shortDescription} mobile={data.title === "Mobile" ? true : null}/>
-            ))}
-          </div>
-        </div>
-
-        {/* use the below dummy-square as a ruler for the bottom for pixel-perfect representation of mockup */}
-        {/* <div className="dummy-square">hello</div> */}
+          {/* dummy-square as a ruler from the bottom */}
+          {/* <div className="dummy-square">hello</div> */}
 
         </BackgroundImage>
-      </Layout>
-    </div>
+      </div>
+    </Layout>
   )
 }
 
