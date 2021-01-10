@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
-import "../css/global.css"
 import "../css/layout.css"
 import "../css/background-image.css"
 

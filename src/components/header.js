@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import "../css/global.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import "../css/header.css"
 
 export default class Header extends React.Component {
@@ -23,6 +24,7 @@ export default class Header extends React.Component {
               to="" 
               className={edge.node.visualStyle==="Blue Button" ? "button primary" : null }>
                 {edge.node.title}
+                <FontAwesomeIcon icon={faChevronRight} size="xs" className={edge.node.visualStyle==="Blue Button" ? "bracket-on" : "bracket-off" }/>
             </Link>
             ))}
         </nav>

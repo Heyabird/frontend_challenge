@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import "../css/highlight.css"
-import "../css/global.css"
 
 export const Highlight = (props) => {
 

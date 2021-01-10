@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import BackgroundImage from 'gatsby-background-image'
 import "../css/index.css"
-import "../css/global.css"
 import { graphql } from "gatsby"
 
 const IndexPage = ({ data }) => {
@@ -35,11 +34,11 @@ const IndexPage = ({ data }) => {
               <Link 
                 to="#" 
                 className="button primary">
-                  {layoutCopyData.ctaTitle}&nbsp; <FontAwesomeIcon icon={faChevronRight} size="xs"/>
+                  {layoutCopyData.ctaTitle}<FontAwesomeIcon icon={faChevronRight} size="xs" className="bracket-on"/>
               </Link>
               <Link 
                 to="#" className="button secondary">
-                  {layoutCopyData.ctaTitle2}&nbsp; <FontAwesomeIcon icon={faChevronRight} size="xs"/>
+                  {layoutCopyData.ctaTitle2}<FontAwesomeIcon icon={faChevronRight} size="xs" className="bracket-on"/>
               </Link>
             </div>
 
