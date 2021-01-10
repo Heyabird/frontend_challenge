@@ -1,4 +1,5 @@
-/**
+/** * Note: the application currently does not use this file and this file remains as a reference
+
  * SEO component that queries for data with
  *  Gatsby's useStaticQuery React hook
  *
