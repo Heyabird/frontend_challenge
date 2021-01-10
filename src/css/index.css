@@ -3,10 +3,12 @@
     height: 100vh;
     padding-bottom: 1rem;
 }
+
 .index-middle {
     max-width: 1170px; 
     margin: auto;
 }
+
 .highlight-section {
     display: flex;
     justify-content: space-between;

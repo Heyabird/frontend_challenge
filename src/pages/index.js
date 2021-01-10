@@ -2,12 +2,11 @@ import React from "react"
 import Header from "../components/header"
 import Layout from "../components/layout"
 import { Highlight } from "../components/highlight"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import BackgroundImage from 'gatsby-background-image'
 import "../css/index.css"
-import { graphql } from "gatsby"
 
 const IndexPage = ({ data }) => {
 
@@ -44,11 +43,11 @@ const IndexPage = ({ data }) => {
 
             <div className="highlight-section">
               {highlightFeatureData.map(data => (
-                // because the mobile phone image needs styling different from the helicopoter and VR headset images, I put in a bool prop value to check if its the mobile image
                 <Highlight 
                   title={data.title} 
                   imgSrc={data.image.fluid.src} 
                   shortDescription={data.shortDescription} 
+                  // because the mobile phone image needs styling different from the helicopoter and VR headset images, I put in a bool prop value to check if its the mobile image
                   mobile={data.title === "Mobile" ? true : null}/>
               ))}
             </div>

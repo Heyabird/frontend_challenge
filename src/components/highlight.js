@@ -5,7 +5,6 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import "../css/highlight.css"
 
 export const Highlight = (props) => {
-
   return (
     <>
       <div id={props.mobile ? 'mobile-highlight' : null} className="highlight">
@@ -15,7 +14,7 @@ export const Highlight = (props) => {
         <Link 
           to="#" 
           className="highlight-learn-more">
-            Learn more&nbsp; <FontAwesomeIcon icon={faChevronRight} size="xs"/>
+            Learn more<FontAwesomeIcon icon={faChevronRight} size="xs" className="bracket-on"/>
         </Link>
       </div>
     </>
