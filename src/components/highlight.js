@@ -10,11 +10,10 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 export const Highlight = (props) => {
   console.log("img src", props.imgSrc)
     // const featureData = data.allContentfulFeature.nodes[0].title
-
     return (
       <>
-        <div className="highlight">
-          <img class="highlight-image" src={props.imgSrc}/>
+        <div id={props.mobileHighlight ? 'mobile-highlight' : null} className="highlight">
+          <img className="highlight-image" src={props.imgSrc}/>
           <p className="highlight-title">{props.title}</p>
           <p className="highlight-description">{props.shortDescription}</p>
           <a href="#" className="highlight-learn-more">Learn more <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>

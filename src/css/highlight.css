@@ -16,6 +16,11 @@
     /* height: 222px; */
 }
 
+#mobile-highlight img{
+    right: 175px;
+    width: 220px;
+}
+
 .extra-padding-left {
     padding-left: 20px;
 }

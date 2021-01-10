@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => {
   const logoImageData = data.allContentfulNavItem.edges[4].node.image.svg.dataURI
   const navItemData = data.allContentfulNavItem.edges
   const highlightFeatureData = data.allContentfulLayoutHighlightedFeature.edges[0].node.feature
-  const layoutCopyData = data.allContentfulLayoutCopy.edges
+  const layoutCopyData = data.allContentfulLayoutCopy.edges[0].node
   console.log("highlightFeatureData", highlightFeatureData)
 
   return (
@@ -27,23 +27,23 @@ const IndexPage = ({ data }) => {
           fluid={backgroundImageData}
         >
 
-        <div class="background-overlay background-overlay2"></div>
+        <div className="background-overlay background-overlay2"></div>
 
         <Header logoImageData={logoImageData} navItemData={navItemData}/>
         <div className="index-middle">
           <div className="hero-copy">
-            <p className="subheadline">{layoutCopyData[0].node.subHeadline}</p>
-            <h1 className="headline">{layoutCopyData[0].node.headline}</h1>
-            <p>{layoutCopyData[0].node.shortDescription}</p>
+            <p className="subheadline">{layoutCopyData.subHeadline}</p>
+            <h1 className="headline">{layoutCopyData.headline}</h1>
+            <p>{layoutCopyData.shortDescription}</p>
           </div>
 
-          <a href="#" className="button primary">{layoutCopyData[2].node.ctaTitle} <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
-          <a href="#" className="button secondary">{layoutCopyData[1].node.ctaTitle} <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
+          <a href="#" className="button primary">{layoutCopyData.ctaTitle} <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
+          <a href="#" className="button secondary">{layoutCopyData.ctaTitle2} <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
 
           <div className="highlight-section">
             <Highlight title={highlightFeatureData[0].title} imgSrc={highlightFeatureData[0].image.fluid.src} shortDescription={highlightFeatureData[0].shortDescription}/>
             <Highlight title={highlightFeatureData[1].title} imgSrc={highlightFeatureData[1].image.fluid.src} shortDescription={highlightFeatureData[1].shortDescription}/>
-            <Highlight title={highlightFeatureData[2].title} imgSrc={highlightFeatureData[2].image.fluid.src} shortDescription={highlightFeatureData[2].shortDescription}/>
+            <Highlight title={highlightFeatureData[2].title} imgSrc={highlightFeatureData[2].image.fluid.src} shortDescription={highlightFeatureData[2].shortDescription} mobileHighlight="true"/>
           </div>
         </div>
         <div className="dummy-square">hello</div>
@@ -102,12 +102,11 @@ export const query = graphql`
       edges {
         node {
           title
-          shortDescription
           subHeadline
           headline
-          visualStyle
+          shortDescription
           ctaTitle
-          type
+          ctaTitle2
         }
       }
     }
