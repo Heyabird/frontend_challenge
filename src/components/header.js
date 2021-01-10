@@ -14,6 +14,8 @@ export default class Header extends React.Component {
 
   render() {
     const {navItemArray, logoImageData} = this.props;
+
+    // navItemArray is undefined in the render error during build, so I put this line to prevent false render errors crashing the build process (src: https://stackoverflow.com/a/54742888/14652359)
     if (navItemArray === undefined) return null;
 
     return (
