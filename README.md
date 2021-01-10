@@ -15,7 +15,6 @@
   <li><b>$ gatsby develop</b> (starts the server on your local host)</li>
 </ul>
 <br/>
-<hr/>
 <br/>
 <h3 align="center"><b>> Content Model:</b></h3>
 <br/>
@@ -27,14 +26,12 @@
 <img width="1168" alt="content" src="https://user-images.githubusercontent.com/29670399/104119336-72158980-52e3-11eb-899b-3840ec728f47.png">
 <br/>
 <br/>
-<hr/>
 <h3 align="center"><b>> Final Product:</b></h3>
 <br/>
 <img width="1087" alt="Screen Shot 2021-01-10 at 11 48 52 AM" src="https://user-images.githubusercontent.com/29670399/104133684-f692f700-5339-11eb-810e-25a59b598660.png"><br/>
 <br/>
 <p>One of the objectives of this challenge was to match <a href="https://www.figma.com/file/FqVA3ujDtY4ebdfoegnU1m/Webstacks-Coding-Challenge-Mockup?node-id=0%3A1" target="_blank">the mockup</a>. The mockup is in the resolution 1700 x 906, so I followed how the site looks like in that resolution as the model. The site also works in other desktop screen models but not in ipad or mobile resolutions. Hover effects were added as bonus.</p>
 <br/>
-<hr/>
 <h3 align="center"><b>> What's Next?:</b></h3>
 <br/>
 <p>Here are some things I would work on next:
