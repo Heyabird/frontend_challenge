@@ -27,7 +27,14 @@ const Layout = ({ children }) => {
 
   return (
     <>
-        <main>{children}</main>
+      <Helmet>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+      </Helmet>
+      <main>{children}</main>
     </>
   )
 }
