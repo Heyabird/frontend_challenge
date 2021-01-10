@@ -32,7 +32,7 @@ const IndexPage = ({ data }) => {
         <div className="index-middle">
           <div className="hero-copy">
             <p className="subheadline">{layoutCopyData[0].node.subHeadline}</p>
-            <h1>{layoutCopyData[0].node.headline}</h1>
+            <h1 className="headline">{layoutCopyData[0].node.headline}</h1>
             <p>{layoutCopyData[0].node.shortDescription}</p>
           </div>
 
