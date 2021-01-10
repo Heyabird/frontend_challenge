@@ -24,7 +24,7 @@ export default class Header extends React.Component {
         <a href="#"><img id="logo" src={logoImageData}/></a>
         <nav id="nav">
           {navItemData.map(edge => ( 
-            <Link className={edge.node.visualStyle==="Blue Button" ? "button primary" : null }>{edge.node.title}</Link>
+            <Link to="" className={edge.node.visualStyle==="Blue Button" ? "button primary" : null }>{edge.node.title}</Link>
             ))}
         </nav>
       </div>

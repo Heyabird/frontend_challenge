@@ -1,6 +1,8 @@
 import React from "react"
 import Header from "../components/header"
+import Layout from "../components/layout"
 import { Highlight } from "../components/highlight"
+import { Link } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 // import { Helmet } from "react-helmet";
@@ -21,7 +23,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <div className="index-body">
-
+    <Layout>
       <BackgroundImage className="background-image" fluid={backgroundImageData}>
         <div className="background-overlay"></div>
 
@@ -32,14 +34,14 @@ const IndexPage = ({ data }) => {
             <p className="subheadline">{layoutCopyData.subHeadline}</p>
             <h1 className="headline">{layoutCopyData.headline}</h1>
             <p className="short-description">{layoutCopyData.shortDescription}</p>
-            <a href="#" className="button primary">{layoutCopyData.ctaTitle}&nbsp; <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
-            <a href="#" className="button secondary">{layoutCopyData.ctaTitle2}&nbsp; <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
+            <Link to="#" className="button primary">{layoutCopyData.ctaTitle}&nbsp; <FontAwesomeIcon icon={faChevronRight} size="xs"/></Link>
+            <Link to="#" className="button secondary">{layoutCopyData.ctaTitle2}&nbsp; <FontAwesomeIcon icon={faChevronRight} size="xs"/></Link>
           </div>
 
           <div className="highlight-section">
             {highlightFeatureData.map(data => (
               // because the mobile phone image has different proportion from that of the helicopoter and VR headset images, I put in a bool prop value to check if its the mobile image
-              <Highlight title={data.title} imgSrc={data.image.fluid.src} shortDescription={data.shortDescription} mobile={data.title == "Mobile" ? true : null}/>
+              <Highlight title={data.title} imgSrc={data.image.fluid.src} shortDescription={data.shortDescription} mobile={data.title === "Mobile" ? true : null}/>
             ))}
           </div>
         </div>
@@ -47,7 +49,8 @@ const IndexPage = ({ data }) => {
         {/* use the below dummy-square as a ruler for the bottom for pixel-perfect representation of mockup */}
         {/* <div className="dummy-square">hello</div> */}
 
-      </BackgroundImage>
+        </BackgroundImage>
+      </Layout>
     </div>
   )
 }
