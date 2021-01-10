@@ -5,19 +5,28 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import "../css/global.css"
 import "../css/header.css"
 
-const Header = props => {
+export default class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    }
+  }
 
-  return (
-    <div id="header">
-      <a href="#"><img id="logo" src={props.logoImageData}/></a>
-      <nav id="nav">
-        <Link to="#">{props.navItemData[3].node.title}</Link>
-        <Link to="#">{props.navItemData[2].node.title}</Link>
-        <Link to="#">{props.navItemData[1].node.title}</Link>
-        <a href="#" className="button primary">{props.navItemData[0].node.title}&nbsp; <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
-      </nav>
-    </div>
-  )
+  render() {
+    const {navItemArray, logoImageData} = this.props;
+    if (navItemArray === undefined) return null;
+
+    return (
+      <div id="header">
+        <a href="#"><img id="logo" src={logoImageData}/></a>
+        <nav id="nav">
+          <Link to="#">{navItemArray[3]}</Link>
+          <Link to="#">{navItemArray[2]}</Link>
+          <Link to="#">{navItemArray[1]}</Link>
+          <a href="#" className="button primary">{navItemArray[0]}&nbsp; <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
+        </nav>
+      </div>
+    )
+  }
 }
 
-export default Header

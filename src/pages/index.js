@@ -11,12 +11,13 @@ import "../css/global.css"
 
 const IndexPage = ({ data }) => {
 
-  const backgroundImageData = data.allContentfulLayoutBackgroundImage.edges[0].node.image.fluid
-  const logoImageData = data.allContentfulNavItem.edges[4].node.image.svg.dataURI
-  const navItemData = data.allContentfulNavItem.edges
-  const highlightFeatureData = data.allContentfulLayoutHighlightedFeature.edges[0].node.feature
-  const layoutCopyData = data.allContentfulLayoutCopy.edges[0].node
-  // console.log("highlightFeatureData", highlightFeatureData)
+  var backgroundImageData = data.allContentfulLayoutBackgroundImage.edges[0].node.image.fluid
+  var logoImageData = data.allContentfulNavItem.edges[4].node.image.svg.dataURI
+  var navItemData = data.allContentfulNavItem.edges
+  var navItemArray = navItemData.map(v => v.node.title)
+  var highlightFeatureData = data.allContentfulLayoutHighlightedFeature.edges[0].node.feature
+  var layoutCopyData = data.allContentfulLayoutCopy.edges[0].node
+  console.log("navItemArray", navItemArray)
 
   return (
     <div className="index-body">
@@ -24,7 +25,7 @@ const IndexPage = ({ data }) => {
       <BackgroundImage className="background-image" fluid={backgroundImageData}>
       <div className="background-overlay background-overlay2"></div>
 
-      <Header logoImageData={logoImageData} navItemData={navItemData}/>
+      <Header logoImageData={logoImageData} navItemArray={navItemArray}/>
       <div className="index-middle">
         <div className="hero-copy">
           <p className="subheadline">{layoutCopyData.subHeadline}</p>
