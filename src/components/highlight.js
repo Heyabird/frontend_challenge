@@ -6,10 +6,10 @@ import "../css/highlight.css"
 import "../css/global.css"
 
 export const Highlight = (props) => {
-  // console.log("img src", props.imgSrc)
+
   return (
     <>
-      <div id={props.mobileHighlight ? 'mobile-highlight' : null} className="highlight">
+      <div id={props.mobile ? 'mobile-highlight' : null} className="highlight">
         <img className="highlight-image" src={props.imgSrc}/>
         <p className="highlight-title">{props.title}</p>
         <p className="highlight-description">{props.shortDescription}</p>

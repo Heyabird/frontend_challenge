@@ -12,20 +12,20 @@ export default class Header extends React.Component {
     }
   }
 
-  render() {
-    const {navItemArray, logoImageData} = this.props;
+  render() { 
+    // const navItemData = data.allContentfulNavItem.edges
+    const {navItemData, logoImageData} = this.props;
 
-    // navItemArray is undefined in the render error during build, so I put this line to prevent false render errors crashing the build process (src: https://stackoverflow.com/a/54742888/14652359)
-    if (navItemArray === undefined) return null;
+    // navItemData is undefined in a false render error during build, so I put this line to prevent false render errors crashing the build process (src: https://stackoverflow.com/a/54742888/14652359)
+    if (navItemData === undefined) return null;
 
     return (
       <div id="header">
         <a href="#"><img id="logo" src={logoImageData}/></a>
         <nav id="nav">
-          <Link to="#">{navItemArray[3]}</Link>
-          <Link to="#">{navItemArray[2]}</Link>
-          <Link to="#">{navItemArray[1]}</Link>
-          <a href="#" className="button primary">{navItemArray[0]}&nbsp; <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
+          {navItemData.map(edge => ( 
+            <Link className={edge.node.visualStyle==="Blue Button" ? "button primary" : null }>{edge.node.title}</Link>
+            ))}
         </nav>
       </div>
     )

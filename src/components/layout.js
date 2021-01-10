@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
           // maxWidth: 1060,
         }}
       >
-        <Header logoURI={`Brackets`} />
+        {/* <Header logoURI={`Brackets`} /> */}
         <main>{children}</main>
       </div>
     </>
