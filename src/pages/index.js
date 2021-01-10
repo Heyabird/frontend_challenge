@@ -6,6 +6,7 @@ import { Highlight } from "../components/highlight"
 import Header from "../components/header"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { Helmet } from "react-helmet";
 import "../css/index.css"
 import "../css/global.css"
 
