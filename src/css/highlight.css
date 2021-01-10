@@ -16,8 +16,8 @@
     /* height: 222px; */
 }
 
-#mobile-highlight img{
-    right: 173px;
+#mobile-highlight .highlight-image{
+    margin-left: 195px;
     top: 470px;
     width: 232px;
 }
