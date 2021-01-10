@@ -26,6 +26,8 @@ const IndexPage = ({ data }) => {
           fluid={backgroundImageData}
         >
 
+        <div class="background-overlay background-overlay2"></div>
+
         <Header logoImageData={logoImageData} navItemData={navItemData}/>
         <div className="index-middle">
           <div className="hero-copy">
@@ -48,6 +50,7 @@ const IndexPage = ({ data }) => {
     </div>
   )
 }
+
 
 export default IndexPage
 
