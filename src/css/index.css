@@ -26,6 +26,10 @@
     font-weight: 700;
 }
 
+.short-description {
+    margin-bottom: 28px;
+}
+
 .index-body .button {
     margin-right: 21px;
 }

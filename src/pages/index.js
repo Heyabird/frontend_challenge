@@ -34,11 +34,12 @@ const IndexPage = ({ data }) => {
           <div className="hero-copy">
             <p className="subheadline">{layoutCopyData.subHeadline}</p>
             <h1 className="headline">{layoutCopyData.headline}</h1>
-            <p>{layoutCopyData.shortDescription}</p>
+            <p className="short-description">{layoutCopyData.shortDescription}</p>
+            <a href="#" className="button primary">{layoutCopyData.ctaTitle}&nbsp; <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
+            <a href="#" className="button secondary">{layoutCopyData.ctaTitle2}&nbsp; <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
           </div>
 
-          <a href="#" className="button primary">{layoutCopyData.ctaTitle} <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
-          <a href="#" className="button secondary">{layoutCopyData.ctaTitle2} <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
+
 
           <div className="highlight-section">
             <Highlight title={highlightFeatureData[0].title} imgSrc={highlightFeatureData[0].image.fluid.src} shortDescription={highlightFeatureData[0].shortDescription}/>

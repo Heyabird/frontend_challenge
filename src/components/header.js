@@ -21,7 +21,7 @@ const Header = props => {
         <a>{props.navItemData[3].node.title}</a>
         <a>{props.navItemData[2].node.title}</a>
         <a>{props.navItemData[1].node.title}</a>
-        <a href="#" className="button primary">{props.navItemData[0].node.title} <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
+        <a href="#" className="button primary">{props.navItemData[0].node.title}&nbsp; <FontAwesomeIcon icon={faChevronRight} size="xs"/></a>
       </nav>
     </div>
   )

@@ -5,20 +5,21 @@
     border-radius: 4px;
     padding: 32px;
     margin-top: 130px;
-    padding-top: 112px;
+    padding-top: 100px;
 }
 
 .highlight-image {
     position: absolute;
-    top: 466px;
-    margin-left: 175px;
+    top: 477px;
+    margin-left: 176px;
     width: 188px;
     /* height: 222px; */
 }
 
 #mobile-highlight img{
-    right: 175px;
-    width: 220px;
+    right: 173px;
+    top: 470px;
+    width: 232px;
 }
 
 .extra-padding-left {
