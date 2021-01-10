@@ -1,4 +1,6 @@
 /**
+ * Note: the application currently does not use this file and this file remains as a reference
+ * 
  * Layout component that queries for data
  * with Gatsby's useStaticQuery component
  *
@@ -34,7 +36,6 @@ const Layout = ({ children }) => {
       >
         <Header logoURI={`Brackets`} />
         <main>{children}</main>
-        
       </div>
     </>
   )
